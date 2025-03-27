@@ -17,10 +17,10 @@ import { Asterisk, Send } from "lucide-react";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { SerializedError } from "@reduxjs/toolkit";
 
-import { ContactFormProps, ContactFormSchema } from "../../types";
-import { useSendMessageMutation } from "../../services/api";
-import { ApiError } from "../../components";
-import { formatApiError } from "../../util/format-api-error";
+import { ContactFormProps, ContactFormSchema } from "@/types";
+import { useSendMessageMutation } from "@/services/api";
+import { formatApiError } from "@/util/format-api-error";
+import { ApiError } from "@/components";
 
 const initState: ContactFormProps = {
   name: "",

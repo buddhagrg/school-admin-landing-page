@@ -21,12 +21,12 @@ import { Asterisk, Wand } from "lucide-react";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { SerializedError } from "@reduxjs/toolkit";
 
-import { DemoFormProps, DemoFormSchema, NameIdType } from "../../types";
-import { useRequestDemoMutation } from "../../services/api";
-import { ApiError } from "../../components";
-import { formatApiError } from "../../util/format-api-error";
-import { AlternativeContact } from "./alternative-contact";
+import { DemoFormProps, DemoFormSchema, NameIdType } from "@/types";
+import { useRequestDemoMutation } from "@/services/api";
 import { ROLES, SCHOOL_SIZES } from "./constant";
+import { formatApiError } from "@/util/format-api-error";
+import { ApiError } from "@/components";
+import { AlternativeContact } from "./alternative-contact";
 
 const initState: DemoFormProps = {
   schoolName: "",

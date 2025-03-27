@@ -1,9 +1,9 @@
 "use client";
 
 import { Box, Grid2, Typography } from "@mui/material";
-import { AppLayout, SectionLayout } from "../../components";
 import { ContactForm } from "./contact-form";
 import { ContactInfo } from "./contact-info";
+import { AppLayout, SectionLayout } from "@/components";
 
 export default function ContactUs() {
   return (
@@ -14,8 +14,8 @@ export default function ContactUs() {
             Contact Us
           </Typography>
           <Typography color="text.secondary">
-            We&apos;d love to hear from you. Please get in touch with any questions
-            or feedback.
+            We&apos;d love to hear from you. Please get in touch with any
+            questions or feedback.
           </Typography>
         </Box>
         <Grid2 container spacing={3} my={4}>

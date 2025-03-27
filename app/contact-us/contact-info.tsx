@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Avatar, Box, Card, CardContent, Typography } from "@mui/material";
+import { blue } from "@mui/material/colors";
 import { Clock, Mail } from "lucide-react";
 
 export const ContactInfo = () => {
@@ -29,7 +30,7 @@ export const ContactInfo = () => {
     <Card sx={{ mb: 3 }} key={title}>
       <CardContent sx={{ textAlign: "left" }}>
         <Box display="flex" alignItems="center" gap={1} mb={3}>
-          {icon}
+          <Avatar sx={{ bgcolor: blue[50] }}>{icon}</Avatar>
           <Typography variant="h6" fontWeight={600}>
             {title}
           </Typography>

@@ -1,7 +1,7 @@
 "use client";
 
+import { AppLayout, SectionLayout } from "@/components";
 import { Box, Grid2, Typography } from "@mui/material";
-import { AppLayout, SectionLayout } from "../../components";
 import { DemoForm } from "./demo-form";
 import { DemoInfo } from "./demo-info";
 import { DemoFaq } from "./demo-faq";
