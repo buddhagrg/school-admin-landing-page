@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Avatar,
   Box,
@@ -13,7 +14,6 @@ import {
 } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import { Award, CreditCard, Dot } from "lucide-react";
-import React from "react";
 import { SectionLayout } from "./section-layout";
 
 export const Roadmap = () => {
@@ -52,7 +52,8 @@ export const Roadmap = () => {
           Product Roadmap
         </Typography>
         <Typography color="text.secondary">
-          We are constantly improving our system. Here&apos;s what&apos;s coming next.
+          We are constantly improving our system. Here&apos;s what&apos;s coming
+          next.
         </Typography>
       </Box>
       <Box mt={3} />

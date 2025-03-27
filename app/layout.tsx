@@ -1,7 +1,7 @@
 import React from "react";
-import "./globals.css";
 import { Metadata, Viewport } from "next";
 import { LayoutClient } from "./layout-client";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Simplifying school management | School Admin",

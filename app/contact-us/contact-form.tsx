@@ -14,10 +14,11 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Asterisk, Send } from "lucide-react";
-import { ContactFormProps, ContactFormSchema } from "../../types";
-import { useSendMessageMutation } from "../../services/api";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { SerializedError } from "@reduxjs/toolkit";
+
+import { ContactFormProps, ContactFormSchema } from "../../types";
+import { useSendMessageMutation } from "../../services/api";
 import { ApiError } from "../../components";
 import { formatApiError } from "../../util/format-api-error";
 
@@ -80,7 +81,8 @@ export const ContactForm = () => {
         Send us a message
       </Typography>
       <Typography variant="body2" color="text.secondary">
-        Fill out the form below and we&apos;ll get back to you as soon as possible.
+        Fill out the form below and we&apos;ll get back to you as soon as
+        possible.
       </Typography>
       <Box mt={5} />
       <form onSubmit={handleSubmit(onSave)}>

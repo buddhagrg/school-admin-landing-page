@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import {
   Avatar,
   Box,
@@ -7,7 +8,6 @@ import {
   Typography,
 } from "@mui/material";
 import { Bell, Calendar, ClipboardList, Users } from "lucide-react";
-import React, { useMemo } from "react";
 import { SectionLayout } from "./section-layout";
 
 export const Features = () => {

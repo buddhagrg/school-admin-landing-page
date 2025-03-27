@@ -1,3 +1,4 @@
+import React, { useMemo, useState } from "react";
 import {
   Accordion,
   AccordionDetails,
@@ -7,7 +8,6 @@ import {
   Typography,
 } from "@mui/material";
 import { ChevronDown } from "lucide-react";
-import React, { useMemo, useState } from "react";
 
 export const DemoFaq = () => {
   const [expanded, setExpanded] = useState<number>(-1);

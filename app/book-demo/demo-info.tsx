@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import {
   Avatar,
   Box,
@@ -10,7 +11,6 @@ import {
 } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import { Check, Clock, Users } from "lucide-react";
-import { useMemo } from "react";
 
 export const DemoInfo = () => {
   const items: Array<{

@@ -1,8 +1,8 @@
 "use client";
 
+import React from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { Clock, Mail } from "lucide-react";
-import React from "react";
 
 export const ContactInfo = () => {
   const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL;

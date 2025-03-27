@@ -1,4 +1,4 @@
-import { AppLayout, Features, Hero, HowItWorks, Roadmap } from "../components";
+import { AppLayout, Features, Hero, HowItWorks, Roadmap } from "@/components";
 
 export default function Home() {
   return (

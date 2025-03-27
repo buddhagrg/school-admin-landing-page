@@ -1,5 +1,5 @@
-import { Box, Divider } from "@mui/material";
 import React from "react";
+import { Box, Divider } from "@mui/material";
 import { CopyRight, Footer } from "./footer";
 import { Navbar } from "./navbar";
 

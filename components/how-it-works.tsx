@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import {
   Avatar,
   Box,
@@ -7,7 +8,6 @@ import {
   Typography,
 } from "@mui/material";
 import { blue, indigo } from "@mui/material/colors";
-import { useMemo } from "react";
 import { SectionLayout } from "./section-layout";
 
 export const HowItWorks = () => {

@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { NavbarBrand } from "../navbar/navbar-brand";
+import { NavbarBrand } from "../navbar";
 
 export const BrandDescription = () => {
   return (
