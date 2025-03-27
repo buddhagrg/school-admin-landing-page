@@ -13,9 +13,9 @@ export const Hero = () => {
           Built for efficient management of every aspect of your educational
           institution.
         </Typography>
-        <Typography component="p" variant="body1" color="text.secondary" mb={2}>
+        <Typography component="p" variant="body1" mb={2}>
           A complete school management system that helps administrators,
-          teachers, and students <br />
+          teachers, students, parents, and staff <br />
           collaborate effectively. Set up your own school in minutes.
         </Typography>
         <Link href={"/request-demo"}>

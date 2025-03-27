@@ -1,11 +1,16 @@
-'use client';
 import React from "react";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { theme } from "../theme";
 import "./globals.css";
-import { ApiProvider } from "@reduxjs/toolkit/query/react";
-import { api } from "../services/api";
+import { Metadata, Viewport } from "next";
+import { LayoutClient } from "./layout-client";
+
+export const metadata: Metadata = {
+  title: "Simplifying school management | School Admin",
+  description: `A complete school management system that helps administrators, teachers, students, parents, and staff collaborate effectively.`,
+};
+
+export const viewport: Viewport = {
+  maximumScale: 1,
+};
 
 export default function RootLayout({
   children,
@@ -15,12 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AppRouterCacheProvider options={{ key: "css" }}>
-          <CssBaseline />
-          <ThemeProvider theme={theme}>
-            <ApiProvider api={api}>{children}</ApiProvider>
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
   );
