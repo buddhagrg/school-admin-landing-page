@@ -1,11 +1,10 @@
 services:
-  - type: web
-    name: next-js
-    runtime: node
-    plan: free
-    buildCommand: pnpm install; pnpm build
-    startCommand: pnpm start
-    autoDeploy: false
-    envVars:
-      - key: PORT
-        value: 10000
+- type: web
+  name: nextjs-static
+  runtime: static
+  buildCommand: pnpm; pnpm build
+  staticPublishPath: out
+  pullRequestPreviewsEnabled: true     # optional
+  envVars:
+  - key: NODE_ENV
+    value: production
