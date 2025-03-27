@@ -1,19 +1,6 @@
 "use client";
 
-import {
-  Avatar,
-  Box,
-  Card,
-  CardContent,
-  CardHeader,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Paper,
-  Typography,
-} from "@mui/material";
-import { blue } from "@mui/material/colors";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import { Clock, Mail } from "lucide-react";
 import React from "react";
 

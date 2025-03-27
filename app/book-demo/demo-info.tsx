@@ -48,7 +48,7 @@ export const DemoInfo = () => {
         What to Expect
       </Typography>
       <Typography variant="body2" color="text.secondary">
-        Here's what happens after you submit your request
+        Here&apos; what happens after you submit your request
       </Typography>
       <Box mt={2} />
       <List dense>

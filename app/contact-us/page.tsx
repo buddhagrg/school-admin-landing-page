@@ -14,7 +14,7 @@ export default function ContactUs() {
             Contact Us
           </Typography>
           <Typography color="text.secondary">
-            We'd love to hear from you. Please get in touch with any questions
+            We&apos;d love to hear from you. Please get in touch with any questions
             or feedback.
           </Typography>
         </Box>

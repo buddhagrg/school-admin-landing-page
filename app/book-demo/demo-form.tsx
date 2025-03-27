@@ -9,7 +9,6 @@ import {
   FormControl,
   FormHelperText,
   FormLabel,
-  InputLabel,
   MenuItem,
   Paper,
   Select,

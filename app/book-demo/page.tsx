@@ -15,7 +15,7 @@ export default function BookDemo() {
             Book a Demo
           </Typography>
           <Typography color="text.secondary">
-            Fill out the form below and we'll contact you to schedule a
+            Fill out the form below and we&apos;ll contact you to schedule a
             personalized demo of our <br /> school management system.
           </Typography>
         </Box>

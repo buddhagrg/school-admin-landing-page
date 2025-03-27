@@ -80,7 +80,7 @@ export const ContactForm = () => {
         Send us a message
       </Typography>
       <Typography variant="body2" color="text.secondary">
-        Fill out the form below and we'll get back to you as soon as possible.
+        Fill out the form below and we&apos;ll get back to you as soon as possible.
       </Typography>
       <Box mt={5} />
       <form onSubmit={handleSubmit(onSave)}>

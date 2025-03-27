@@ -52,7 +52,7 @@ export const Roadmap = () => {
           Product Roadmap
         </Typography>
         <Typography color="text.secondary">
-          We are constantly improving our system. Here's what's coming next.
+          We are constantly improving our system. Here&apos;s what&apos;s coming next.
         </Typography>
       </Box>
       <Box mt={3} />
