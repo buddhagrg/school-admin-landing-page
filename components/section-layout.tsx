@@ -12,7 +12,7 @@ export const SectionLayout: React.FC<SectionLayoutProps> = ({
   id,
 }) => {
   return (
-    <Container maxWidth={false} sx={{ p: 10, ...sx }} id={id}>
+    <Container maxWidth={false} sx={{ py: 10, ...sx }} id={id}>
       <Container maxWidth="lg">{children}</Container>
     </Container>
   );
