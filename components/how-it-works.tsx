@@ -20,9 +20,9 @@ export const HowItWorks = () => {
     () => [
       {
         step: 1,
-        name: "Book a Demo",
+        name: "Request Access",
         description:
-          "Fill out a simple form to request a personalized demo of our platform.",
+          "Fill out a simple form to request access to demo of our platform.",
         feedbackText:
           "The demo was comprehensive and answered all our questions.",
       },

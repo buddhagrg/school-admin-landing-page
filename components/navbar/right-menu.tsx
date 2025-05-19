@@ -23,9 +23,9 @@ export const RightMenu = () => {
           Login
         </Typography>
       </Link>
-      <Link href={"/book-demo"}>
+      <Link href={"/request-access"}>
         <Button variant="contained" sx={{ backgroundColor: "#DF5C52" }}>
-          Book a demo
+          Request Access
         </Button>
       </Link>
     </Box>
