@@ -18,7 +18,7 @@ export const Hero = () => {
           teachers, students, parents, and staff <br />
           collaborate effectively. Set up your own school in minutes.
         </Typography>
-        <Link href={"/request-demo"}>
+        <Link href={"/book-demo"}>
           <Button variant="contained" sx={{ backgroundColor: "#DF5C52" }}>
             Book a demo
           </Button>
