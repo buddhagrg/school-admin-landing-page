@@ -2,7 +2,7 @@ import { env } from "./config/env";
 import { NameIdType } from "./types";
 
 export const mainApp = env.dashboardApp || "/";
-console.log(env)
+
 export const mainMenus: { name: string; link: string }[] = [
   { name: "Features", link: "#features" },
   { name: "How It Works", link: "#how-it-works" },
