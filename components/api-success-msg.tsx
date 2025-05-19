@@ -1,16 +1,7 @@
-import {
-  Alert,
-  AlertTitle,
-  Box,
-  Collapse,
-  IconButton,
-  List,
-  ListItem,
-  ListItemText,
-} from "@mui/material";
+import { Alert, Box, Collapse, IconButton } from "@mui/material";
 import { X } from "lucide-react";
 
-export const ApiError = ({
+export const ApiSuccessMsg = ({
   messages,
   closeAlert,
   open,
@@ -27,7 +18,6 @@ export const ApiError = ({
     <Box sx={{ width: "100%" }}>
       <Collapse in={open}>
         <Alert
-          severity="error"
           action={
             <IconButton
               aria-label="close"
@@ -42,18 +32,7 @@ export const ApiError = ({
           }
           sx={{ mb: 2 }}
         >
-          <AlertTitle>Error</AlertTitle>
-          <List
-            dense
-            disablePadding
-            sx={{ listStyleType: "disc", marginLeft: 2 }}
-          >
-            {messages.map((msg) => (
-              <ListItem disablePadding sx={{ display: "list-item" }} key={msg}>
-                <ListItemText primary={msg} />
-              </ListItem>
-            ))}
-          </List>
+          {messages[0]}
         </Alert>
       </Collapse>
     </Box>

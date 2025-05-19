@@ -28,6 +28,7 @@ import {
 import { ApiError } from "@/components";
 import { formatApiError } from "@/util/format-api-error";
 import { ROLES, SCHOOL_SIZES } from "@/constant";
+import { ApiSuccessMsg } from "./api-success-msg";
 
 type RequestFormType = {
   description: string;
@@ -44,6 +45,14 @@ const initState: RequestFormProps = {
   role: "",
   additionalInfo: "",
 };
+type ApiResponse = {
+  isError: boolean;
+  messages: string[];
+};
+const apiResponse: ApiResponse = {
+  isError: false,
+  messages: [],
+};
 export const RequestForm: React.FC<RequestFormType> = ({
   description,
   submitLabel,
@@ -54,12 +63,14 @@ export const RequestForm: React.FC<RequestFormType> = ({
     register,
     formState: { errors },
     handleSubmit,
+    reset,
     control,
   } = useForm<RequestFormProps>({
     defaultValues: initState,
     resolver: zodResolver(RequestFormSchema),
   });
-  const [response, setResponse] = useState<string[]>([]);
+  const [state, setState] = useState<ApiResponse>(apiResponse);
+  const [alertOpen, setAlertOpen] = useState(true);
 
   const fields: Array<{
     name: keyof RequestFormProps;
@@ -110,16 +121,24 @@ export const RequestForm: React.FC<RequestFormType> = ({
       placeHolder: "Tell us about your specific needs or questions",
     },
   ];
+
   const onSave = async (data: RequestFormProps) => {
-    let response: string[] = [];
     try {
       const result = await requestAction(data);
-      response = [result.message];
+      reset(initState);
+      setState({ isError: false, messages: [result.message] });
     } catch (error) {
-      response = formatApiError(error as FetchBaseQueryError | SerializedError);
+      const errors = formatApiError(
+        error as FetchBaseQueryError | SerializedError
+      );
+      setState({ isError: true, messages: errors });
     } finally {
-      setResponse(response);
+      setAlertOpen(true);
     }
+  };
+
+  const closeAlert = () => {
+    setAlertOpen(false);
   };
 
   return (
@@ -200,7 +219,26 @@ export const RequestForm: React.FC<RequestFormType> = ({
           )
         )}
         <Box my={2} />
-        {response && <ApiError messages={response} />}
+
+        {!state.isError && (
+          <Box mb={2}>
+            <ApiSuccessMsg
+              messages={state.messages}
+              closeAlert={closeAlert}
+              open={alertOpen}
+            />
+          </Box>
+        )}
+        {state.isError && (
+          <Box mb={2}>
+            <ApiError
+              messages={state.messages}
+              closeAlert={closeAlert}
+              open={alertOpen}
+            />
+          </Box>
+        )}
+
         <Button
           variant="contained"
           loading={isLoading}
