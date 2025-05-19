@@ -6,7 +6,7 @@ import { blue } from "@mui/material/colors";
 import { Mail } from "lucide-react";
 
 export const AlternativeContact = () => {
-  const email = env.SUPPORT_EAMIL;
+  const email = env.email;
   return (
     <Box
       sx={{
