@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import Link from "next/link";
-import { appLink } from "./constant";
+import { mainApp } from "@/constant";
 
 export const RightMenu = () => {
   return (
@@ -10,7 +10,7 @@ export const RightMenu = () => {
         alignItems: "center",
       }}
     >
-      <Link href={appLink}>
+      <Link href={mainApp}>
         <Typography
           sx={{
             color: "black",

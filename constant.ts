@@ -1,4 +1,23 @@
-import { NameIdType } from "../../types";
+import { NameIdType } from "./types";
+
+export const mainApp = process.env.NEXT_PUBLIC_MAIN_APP || "/";
+
+export const mainMenus: { name: string; link: string }[] = [
+  { name: "Features", link: "#features" },
+  { name: "How It Works", link: "#how-it-works" },
+  { name: "Roadmap", link: "#roadmap" },
+];
+export const dialogMenus: { name: string; link: string }[] = [
+  ...mainMenus,
+  {
+    name: "Login",
+    link: mainApp,
+  },
+  {
+    name: "Book demo",
+    link: "book-demo",
+  },
+];
 
 export const SCHOOL_SIZES: NameIdType<string>[] = [
   { id: "S", name: "Small (less than 500 students)" },

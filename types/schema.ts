@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const DemoFormSchema = z.object({
+export const RequestFormSchema = z.object({
   schoolName: z.string().min(1, "School Name is required"),
   contactPerson: z.string().min(1, "Contact person is required"),
   role: z.string().optional(),

@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { MenuIcon, X } from "lucide-react";
-import { dialogMenus } from "./constant";
+import { dialogMenus } from "@/constant";
 
 export const DialogMenu = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -42,7 +42,7 @@ export const DialogMenu = () => {
           <List dense>
             {dialogMenus.map(({ name, link }) => (
               <Link
-                href={link.includes("https") ? link : `/${link}`}
+                href={link?.includes("https") ? link : `/${link}`}
                 key={link}
                 onClick={toggleDialog}
               >

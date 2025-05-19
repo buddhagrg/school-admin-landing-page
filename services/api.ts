@@ -1,13 +1,24 @@
-import { ApiSuccessResponse, ContactFormProps, DemoFormProps } from "@/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import {
+  ApiSuccessResponse,
+  ContactFormProps,
+  RequestFormProps,
+} from "@/types";
 
 export const api = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.API }),
   endpoints: (build) => ({
-    requestDemo: build.mutation<ApiSuccessResponse, DemoFormProps>({
+    requestDemo: build.mutation<ApiSuccessResponse, RequestFormProps>({
       query: (payload) => ({
         url: `/demo`,
+        method: "POST",
+        body: payload,
+      }),
+    }),
+    requestAccess: build.mutation<ApiSuccessResponse, RequestFormProps>({
+      query: (payload) => ({
+        url: `/request-access`,
         method: "POST",
         body: payload,
       }),
@@ -22,4 +33,8 @@ export const api = createApi({
   }),
 });
 
-export const { useRequestDemoMutation, useSendMessageMutation } = api;
+export const {
+  useRequestDemoMutation,
+  useSendMessageMutation,
+  useRequestAccessMutation,
+} = api;
