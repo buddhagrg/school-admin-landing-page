@@ -1,6 +1,7 @@
+import { env } from "./config/env";
 import { NameIdType } from "./types";
 
-export const mainApp = process.env.NEXT_PUBLIC_MAIN_APP || "/";
+export const mainApp = env.dashboardApp || "/";
 
 export const mainMenus: { name: string; link: string }[] = [
   { name: "Features", link: "#features" },

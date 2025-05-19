@@ -1,11 +1,12 @@
 "use client";
 
+import { env } from "@/config/env";
 import { Box, Typography } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import { Mail } from "lucide-react";
 
 export const AlternativeContact = () => {
-  const email = process.env.DEMO_EMAIL;
+  const email = env.SUPPORT_EAMIL;
   return (
     <Box
       sx={{

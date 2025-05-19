@@ -4,10 +4,11 @@ import {
   ContactFormProps,
   RequestFormProps,
 } from "@/types";
+import { env } from "@/config/env";
 
 export const api = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: process.env.API }),
+  baseQuery: fetchBaseQuery({ baseUrl: env.api }),
   endpoints: (build) => ({
     requestDemo: build.mutation<ApiSuccessResponse, RequestFormProps>({
       query: (payload) => ({

@@ -4,9 +4,10 @@ import React from "react";
 import { Avatar, Box, Card, CardContent, Typography } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import { Clock, Mail } from "lucide-react";
+import { env } from "@/config/env";
 
 export const ContactInfo = () => {
-  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL;
+  const supportEmail = env.email;
   const items: Array<{
     title: string;
     subtitle: string;
