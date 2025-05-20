@@ -17,10 +17,15 @@ import { Asterisk, Send } from "lucide-react";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { SerializedError } from "@reduxjs/toolkit";
 
-import { ContactFormProps, ContactFormSchema } from "@/types";
+import {
+  type ApiResponse,
+  type ContactFormProps,
+  ContactFormSchema,
+} from "@/types";
 import { useSendMessageMutation } from "@/services/api";
 import { formatApiError } from "@/util/format-api-error";
-import { ApiError } from "@/components";
+import { initialApiResponse } from "@/constants";
+import { ApiResponseAlert } from "@/components";
 
 const initState: ContactFormProps = {
   name: "",
@@ -36,8 +41,11 @@ export const ContactForm = () => {
     defaultValues: initState,
     resolver: zodResolver(ContactFormSchema),
   });
+
   const [sendMessage, { isLoading }] = useSendMessageMutation();
-  const [response, setResponse] = useState<string[]>([]);
+  const [apiResponse, setApiResponse] =
+    useState<ApiResponse>(initialApiResponse);
+  const [alertOpen, setAlertOpen] = useState(false);
 
   const fields: Array<{
     name: keyof ContactFormProps;
@@ -63,15 +71,22 @@ export const ContactForm = () => {
       isRequired: true,
     },
   ];
+
+  const closeAlert = () => {
+    setAlertOpen(false);
+  };
+
   const onSave = async (data: ContactFormProps) => {
     let response: string[] = [];
     try {
       const result = await sendMessage(data).unwrap();
       response = [result.message];
+      setApiResponse({ severity: "success", messages: response });
     } catch (error) {
       response = formatApiError(error as FetchBaseQueryError | SerializedError);
+      setApiResponse({ severity: "error", messages: response });
     } finally {
-      setResponse(response);
+      setAlertOpen(true);
     }
   };
 
@@ -107,7 +122,16 @@ export const ContactForm = () => {
           </FormControl>
         ))}
         <Box my={2} />
-        {response && <ApiError messages={response} />}
+
+        {apiResponse.messages.length > 0 && (
+          <ApiResponseAlert
+            messages={apiResponse.messages}
+            severity={apiResponse.severity}
+            onClose={closeAlert}
+            open={alertOpen}
+          />
+        )}
+
         <Button
           variant="contained"
           disabled={isLoading}

@@ -12,3 +12,8 @@ export type NameIdType<T = number> = {
   name: string;
   id: T;
 };
+
+export type ApiResponse = {
+  severity: "error" | "success";
+  messages: string[];
+};

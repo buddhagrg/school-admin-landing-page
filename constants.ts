@@ -1,5 +1,5 @@
 import { env } from "./config/env";
-import { NameIdType } from "./types";
+import { ApiResponse, NameIdType } from "./types";
 
 export const mainApp = env.dashboardApp || "/";
 
@@ -36,3 +36,8 @@ export const ROLES: NameIdType<string>[] = [
   { id: "SCHOOL_BOARD_MEMBER", name: "School Board Member" },
   { id: "OTHER", name: "Other" },
 ];
+
+export const initialApiResponse: ApiResponse = {
+  severity: "success",
+  messages: [],
+};

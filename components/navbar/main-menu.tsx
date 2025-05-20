@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
-import { mainMenus } from "@/constant";
+import { mainMenus } from "@/constants";
 
 export const MainMenu = () => {
   return (

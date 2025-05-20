@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { MenuIcon, X } from "lucide-react";
-import { dialogMenus } from "@/constant";
+import { dialogMenus } from "@/constants";
 
 export const DialogMenu = () => {
   const [open, setOpen] = useState<boolean>(false);

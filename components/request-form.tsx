@@ -20,15 +20,15 @@ import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { SerializedError } from "@reduxjs/toolkit";
 
 import {
-  RequestFormProps,
+  type RequestFormProps,
+  type NameIdType,
+  type ApiSuccessResponse,
+  type ApiResponse,
   RequestFormSchema,
-  NameIdType,
-  ApiSuccessResponse,
 } from "@/types";
-import { ApiError } from "@/components";
 import { formatApiError } from "@/util/format-api-error";
-import { ROLES, SCHOOL_SIZES } from "@/constant";
-import { ApiSuccessMsg } from "./api-success-msg";
+import { initialApiResponse, ROLES, SCHOOL_SIZES } from "@/constants";
+import { ApiResponseAlert } from "./api-response-alert";
 
 type RequestFormType = {
   description: string;
@@ -44,14 +44,6 @@ const initState: RequestFormProps = {
   schoolSize: "",
   role: "",
   additionalInfo: "",
-};
-type ApiResponse = {
-  isError: boolean;
-  messages: string[];
-};
-const apiResponse: ApiResponse = {
-  isError: false,
-  messages: [],
 };
 export const RequestForm: React.FC<RequestFormType> = ({
   description,
@@ -69,8 +61,9 @@ export const RequestForm: React.FC<RequestFormType> = ({
     defaultValues: initState,
     resolver: zodResolver(RequestFormSchema),
   });
-  const [state, setState] = useState<ApiResponse>(apiResponse);
-  const [alertOpen, setAlertOpen] = useState(true);
+  const [apiResponse, setApiResponse] =
+    useState<ApiResponse>(initialApiResponse);
+  const [alertOpen, setAlertOpen] = useState(false);
 
   const fields: Array<{
     name: keyof RequestFormProps;
@@ -126,12 +119,12 @@ export const RequestForm: React.FC<RequestFormType> = ({
     try {
       const result = await requestAction(data);
       reset(initState);
-      setState({ isError: false, messages: [result.message] });
+      setApiResponse({ severity: "success", messages: [result.message] });
     } catch (error) {
       const errors = formatApiError(
         error as FetchBaseQueryError | SerializedError
       );
-      setState({ isError: true, messages: errors });
+      setApiResponse({ severity: "error", messages: errors });
     } finally {
       setAlertOpen(true);
     }
@@ -220,23 +213,13 @@ export const RequestForm: React.FC<RequestFormType> = ({
         )}
         <Box my={2} />
 
-        {!state.isError && (
-          <Box mb={2}>
-            <ApiSuccessMsg
-              messages={state.messages}
-              closeAlert={closeAlert}
-              open={alertOpen}
-            />
-          </Box>
-        )}
-        {state.isError && (
-          <Box mb={2}>
-            <ApiError
-              messages={state.messages}
-              closeAlert={closeAlert}
-              open={alertOpen}
-            />
-          </Box>
+        {apiResponse.messages.length > 0 && (
+          <ApiResponseAlert
+            severity={apiResponse.severity}
+            messages={apiResponse.messages}
+            onClose={closeAlert}
+            open={alertOpen}
+          />
         )}
 
         <Button
