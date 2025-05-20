@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import {
+import type {
   ApiSuccessResponse,
   ContactFormProps,
   RequestFormProps,
@@ -8,7 +8,7 @@ import { env } from "@/config/env";
 
 export const api = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: env.api }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${env.api}/v1` }),
   endpoints: (build) => ({
     requestDemo: build.mutation<ApiSuccessResponse, RequestFormProps>({
       query: (payload) => ({
@@ -19,7 +19,7 @@ export const api = createApi({
     }),
     requestAccess: build.mutation<ApiSuccessResponse, RequestFormProps>({
       query: (payload) => ({
-        url: `/request-access`,
+        url: `/demo/request-access`,
         method: "POST",
         body: payload,
       }),
