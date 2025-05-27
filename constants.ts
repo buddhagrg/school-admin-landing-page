@@ -15,8 +15,8 @@ export const dialogMenus: { name: string; link: string }[] = [
     link: mainApp,
   },
   {
-    name: "Book demo",
-    link: "book-demo",
+    name: "Request System Access",
+    link: "request-access",
   },
 ];
 

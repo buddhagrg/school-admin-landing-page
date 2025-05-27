@@ -35,6 +35,7 @@ const initState: ContactFormProps = {
 export const ContactForm = () => {
   const {
     register,
+    reset,
     formState: { errors },
     handleSubmit,
   } = useForm<ContactFormProps>({
@@ -82,6 +83,7 @@ export const ContactForm = () => {
       const result = await sendMessage(data).unwrap();
       response = [result.message];
       setApiResponse({ severity: "success", messages: response });
+      reset(initState);
     } catch (error) {
       response = formatApiError(error as FetchBaseQueryError | SerializedError);
       setApiResponse({ severity: "error", messages: response });

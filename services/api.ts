@@ -10,23 +10,16 @@ export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: `${env.api}/v1` }),
   endpoints: (build) => ({
-    requestDemo: build.mutation<ApiSuccessResponse, RequestFormProps>({
-      query: (payload) => ({
-        url: `/demo`,
-        method: "POST",
-        body: payload,
-      }),
-    }),
     requestAccess: build.mutation<ApiSuccessResponse, RequestFormProps>({
       query: (payload) => ({
-        url: `/demo/request-access`,
+        url: `/system-access/request`,
         method: "POST",
         body: payload,
       }),
     }),
     sendMessage: build.mutation<ApiSuccessResponse, ContactFormProps>({
       query: (payload) => ({
-        url: `/contact`,
+        url: `/contact-us`,
         method: "POST",
         body: payload,
       }),
@@ -34,8 +27,4 @@ export const api = createApi({
   }),
 });
 
-export const {
-  useRequestDemoMutation,
-  useSendMessageMutation,
-  useRequestAccessMutation,
-} = api;
+export const { useSendMessageMutation, useRequestAccessMutation } = api;
