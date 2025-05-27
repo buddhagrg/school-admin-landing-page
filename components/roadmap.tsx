@@ -25,7 +25,7 @@ export const Roadmap = () => {
   }> = [
     {
       title: "Fee Management",
-      releaseTime: "Mid-Q2, 2025",
+      releaseTime: "End-Q2, 2025",
       icon: <CreditCard />,
       features: [
         "Generate Invoices",
@@ -35,7 +35,7 @@ export const Roadmap = () => {
     },
     {
       title: "Examination System",
-      releaseTime: "Late-Q2 to Early-Q3, 2025",
+      releaseTime: "Mid-Q3 to Late-Q3, 2025",
       icon: <Award />,
       features: [
         "Create and schedule exams",
