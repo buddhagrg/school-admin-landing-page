@@ -20,26 +20,31 @@ export const HowItWorks = () => {
     () => [
       {
         step: 1,
-        name: "Request Access",
+        name: "Request System Access",
         description:
-          "Fill out a simple form to request access to demo of our platform.",
-        feedbackText:
-          "The demo was comprehensive and answered all our questions.",
+          "Fill out a simple form to request access of our platform.",
+        feedbackText: "It was quick and easy to request access.",
       },
       {
         step: 2,
-        name: "Guided Setup",
+        name: "Verify Email",
         description:
-          "Our team helps configure your school's structure, classes, and user accounts.",
-        feedbackText:
-          "The onboarding team helped us set up everything correctly.",
+          "Check your inbox to verify your email address. This helps us keep your account secure",
+        feedbackText: "The email verification was seamless and fast.",
       },
       {
         step: 3,
+        name: "Set Your Password",
+        description:
+          "Once verified, you’ll receive a link to set up your password and activate your account.",
+        feedbackText: "Setting up the password was simple and secure.",
+      },
+      {
+        step: 4,
         name: "Start Managing",
         description:
-          "Begin using all features with ongoing support from our customer success team.",
-        feedbackText: "We've seen reductions in administrative workload.",
+          "Log in and start using all features with full access and support from our team.",
+        feedbackText: "We were up and running in no time.",
       },
     ],
     []
@@ -58,7 +63,7 @@ export const HowItWorks = () => {
         <Box mt={3} />
         <Grid2 container spacing={4}>
           {items.map(({ step, name, description, feedbackText }) => (
-            <Grid2 size={{ xs: 12, lg: 4 }} key={step}>
+            <Grid2 size={{ xs: 12, lg: 3 }} key={step}>
               <Card sx={{ height: "100%", pt: 2 }}>
                 <Box display="flex" justifyContent="center">
                   <Avatar sx={{ bgcolor: blue[700] }}>

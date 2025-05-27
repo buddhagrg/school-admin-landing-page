@@ -14,7 +14,7 @@ export const FooterNav = () => {
           link: "#features",
         },
         { name: "Roadmap", link: "#roadmap" },
-        { name: "Request Access", link: "request-access" },
+        { name: "Request System Access", link: "request-access" },
       ],
     },
     {

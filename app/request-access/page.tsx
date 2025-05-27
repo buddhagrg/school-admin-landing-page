@@ -6,7 +6,7 @@ import { AccessForm } from "./access-form";
 import { AccessFaq } from "./access-faq";
 import { AccessInfo } from "./access-info";
 
-export default function BookDemo() {
+export default function RequestAccess() {
   return (
     <AppLayout>
       <SectionLayout sx={{ pt: 15 }}>

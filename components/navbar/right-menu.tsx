@@ -25,7 +25,7 @@ export const RightMenu = () => {
       </Link>
       <Link href={"/request-access"}>
         <Button variant="contained" sx={{ backgroundColor: "#DF5C52" }}>
-          Request Access
+          Request System Access
         </Button>
       </Link>
     </Box>
