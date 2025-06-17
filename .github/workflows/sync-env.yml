@@ -5,14 +5,14 @@ on:
     branches:
       - master
     paths:
-      - '.env.example'
+      - ".env.example"
 
 jobs:
   sync-env:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Service Repository (Repo B)
+      - name: Checkout Service Repository
         uses: actions/checkout@v4
 
       - name: Clone Docker Config Repository (school-admin)
